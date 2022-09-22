@@ -2,8 +2,17 @@ package sudoku
 
 import "strconv"
 
+func in(n string, t []string) bool {
+	for i := 0; i < len(t); i++ {
+		if string(t[i]) == n {
+			return true
+		}
+	}
+	return false
+}
+
 func compute_number_of_possibility(s []string, x int, y int) int {
-	result := -9
+	a := []string{}
 	for i := 0; i < len(s[y]); i++ {
 		if string(s[y][i]) != "." {
 			result += 1
