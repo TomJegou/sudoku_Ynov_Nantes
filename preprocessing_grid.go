@@ -15,15 +15,23 @@ func compute_number_of_possibility(s []string, x int, y int) int {
 	a := []string{}
 	for i := 0; i < len(s[y]); i++ {
 		if string(s[y][i]) != "." {
-			result += 1
+			if !in(string(s[y][i]), a) {
+				a = append(a, string(s[y][i]))
+			} else {
+				continue
+			}
 		}
 	}
 	for i := 0; i < len(s); i++ {
 		if string(s[i][x]) != "." {
-			result += 1
+			if !in(string(s[i][x]), a) {
+				a = append(a, string(s[i][x]))
+			} else {
+				continue
+			}
 		}
 	}
-	return result
+	return (9 - len(a)) * -1
 }
 
 func PreprocessGrid(s []string) [][]int {
