@@ -2,8 +2,8 @@ package sudoku
 
 import "strconv"
 
-func Preprocess_grid(s []string) []int {
-	table := []int{}
+func PreprocessGrid(s []string) [][]int {
+	table := [][]int{}
 	for y := 0; y < len(s); y++ {
 		a := []int{}
 		for x := 0; x < len(s[y]); x++ {
@@ -14,7 +14,7 @@ func Preprocess_grid(s []string) []int {
 				a = append(a, val)
 			}
 		}
-		table = append(table, a...)
+		table = append(table, a)
 	}
 	return table
 }
