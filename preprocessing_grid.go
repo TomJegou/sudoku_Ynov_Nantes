@@ -3,6 +3,8 @@ package sudoku
 import "strconv"
 
 func PreprocessGrid(s []string) [][]int {
+	//function that transform the grid given as argument
+	//in order to make simpler the data process for the IA
 	table := [][]int{}
 	for y := 0; y < len(s); y++ {
 		a := []int{}
