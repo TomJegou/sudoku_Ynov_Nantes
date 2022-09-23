@@ -15,7 +15,7 @@ func Testvalsudoku(ligne []int)bool {
 	return true 
 }
 
-func Colonessudoku (colonne [][]int, idColonne int)bool {
+func Colonnesudoku (colonne [][]int, idColonne int)bool {
 	lentab := len(colonne)
 	p := []int{}
 	for i := 0; i < lentab; i++ { 
