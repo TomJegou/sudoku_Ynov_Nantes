@@ -2,11 +2,12 @@ package main
 
 import (
 	"os"
+	"sudoku/lib"
 )
 
 func main() {
 	args := os.Args[1:]
-	a := PreprocessGrid(args)
-	BackTracking(a, 0)
-	DisplayGrid(a)
+	a := lib.PreprocessGrid(args)
+	lib.BackTracking(a, 0)
+	lib.DisplayGrid(a)
 }

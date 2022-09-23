@@ -1,4 +1,4 @@
-package main
+package lib
 
 func check_zone(x int, x_end int, y int, y_end int, t [][]int) bool {
 	//check the values's unicity in the 3*3 areas

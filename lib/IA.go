@@ -1,4 +1,4 @@
-package main
+package lib
 
 func BackTracking(grid [][]int, pos int) bool {
 	if pos == 9*9 {
