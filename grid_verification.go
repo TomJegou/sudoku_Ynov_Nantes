@@ -15,3 +15,8 @@ func Testvalsudoku(ligne []int)bool {
 	}	
 	return true 
 }
+func Colonessudoku (colone []int)bool {
+
+
+
+}
