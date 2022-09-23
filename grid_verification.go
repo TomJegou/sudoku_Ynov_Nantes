@@ -1,4 +1,4 @@
-package sudoku
+package main
 
 func Linesudoku(ligne []int) bool {
 	lentab := len(ligne)
