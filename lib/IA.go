@@ -40,7 +40,8 @@ func NotInSquare(tab [][]int, x int, y int, digit int) bool {
 }
 
 func BackTracking(grid [][]int, pos int) bool {
-	if pos == 9*9 {
+	//Recursive function that serve as an IA to complete the sudoku grid
+	if pos == 9*9 { //condition to stop the recursivity
 		return true
 	}
 	posX := pos / 9
