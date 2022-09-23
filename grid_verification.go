@@ -11,12 +11,21 @@ func Testvalsudoku(ligne []int)bool {
 				n = append(n, ligne[i]) //puts ligne[i] in n 
 		}
 	} 
-	 
 	}	
 	return true 
 }
-func Colonessudoku (colone []int)bool {
 
-
-
+func Colonessudoku (colonne [][]int, idColonne int)bool {
+	lentab := len(colonne)
+	p := []int{}
+	for i := 0; i < lentab; i++ { 
+		for j := 0; j < len(p); j++ {
+			if colonne[i][idColonne] == p[j] {
+				return false
+			} else {
+				p = append(p, colonne[i][idColonne]) 
+		}
+	} 
+	}	
+	return true 
 }
