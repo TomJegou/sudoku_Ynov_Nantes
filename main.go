@@ -10,6 +10,10 @@ func main() {
 	args := os.Args[1:]
 	a := lib.PreprocessGrid(args)
 	lib.BackTracking(a, 0)
-	fmt.Println(lib.CheckSudoku(a))
-	lib.DisplayGrid(a)
+	if lib.CheckSudoku(a) {
+		lib.DisplayGrid(a)
+	} else {
+		fmt.Println("Error, unable to solve the grid")
+		os.Exit(1)
+	}
 }
