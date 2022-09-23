@@ -20,7 +20,7 @@ func check_zone(x int, x_end int, y int, y_end int, t [][]int) bool {
 }
 
 func CheckSudoku(t [][]int) bool {
-	//Function that check if the grid is correctly resolved
+	//Function that check if the grid is correctly solved
 	for y := 0; y < len(t); y++ {
 		for x := 0; x < len(t[y]); x++ {
 			cursor_end_line := len(t[y]) - 1
