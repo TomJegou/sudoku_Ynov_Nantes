@@ -1,6 +1,8 @@
 package lib
 
 func Linesudoku(ligne []int, n int) bool {
+	//Check if the n parameter is already in the current line
+	//Return true if it's not in the line and false if it's in
 	lentab := len(ligne)
 	for i := 0; i < lentab; i++ {
 		if n == ligne[i] {
@@ -11,6 +13,8 @@ func Linesudoku(ligne []int, n int) bool {
 }
 
 func Colonnesudoku(colonne [][]int, idColonne int, n int) bool {
+	//Check if the n parameter is already in the current column
+	//Return true if it's not in the line and false if it's in
 	lentab := len(colonne)
 	for i := 0; i < lentab; i++ {
 		if colonne[i][idColonne] == n {
