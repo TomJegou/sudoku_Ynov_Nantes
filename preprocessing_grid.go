@@ -11,8 +11,9 @@ func in(n string, t []string) bool {
 	return false
 }
 
-func compute_number_of_possibility(s []string, x int, y int) int {
+func compute_number_of_possibility(s []string, x int, y int) []int {
 	a := []string{}
+	result := []int{}
 	for i := 0; i < len(s[y]); i++ {
 		if string(s[y][i]) != "." {
 			if !in(string(s[y][i]), a) {
@@ -31,21 +32,28 @@ func compute_number_of_possibility(s []string, x int, y int) int {
 			}
 		}
 	}
-	return (9 - len(a)) * -1
+	for i := 1; i < len(s); i++ {
+		if !in(strconv.Itoa(i), a) {
+			result = append(result, i)
+		}
+	}
+	return result
 }
 
-func PreprocessGrid(s []string) [][]int {
+func PreprocessGrid(s []string) [][][]int {
 	//function that transform the grid given as argument
 	//in order to make simpler the data process for the IA
-	table := [][]int{}
+	table := [][][]int{}
 	for y := 0; y < len(s); y++ {
-		a := []int{}
+		a := [][]int{}
 		for x := 0; x < len(s[y]); x++ {
+			b := []int{}
 			if string(s[y][x]) == "." {
 				a = append(a, compute_number_of_possibility(s, x, y))
 			} else {
 				val, _ := strconv.Atoi(string(s[y][x]))
-				a = append(a, val)
+				b = append(b, val)
+				a = append(a, b)
 			}
 		}
 		table = append(table, a)
