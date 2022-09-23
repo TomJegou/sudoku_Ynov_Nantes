@@ -29,3 +29,4 @@ func Colonnesudoku (colonne [][]int, idColonne int)bool {
 	}	
 	return true 
 }
+
