@@ -1,6 +1,7 @@
 package sudoku
 
 func check_zone(x int, x_end int, y int, y_end int, t [][][]int) bool {
+	//check the unicity in the zone 3*3
 	a := []int{}
 	for y := y; y <= y_end; y++ {
 		for x := x; x <= x_end; x++ {
@@ -19,6 +20,7 @@ func check_zone(x int, x_end int, y int, y_end int, t [][][]int) bool {
 }
 
 func CheckSudoku(t [][][]int) bool {
+	//Function that check if the grid is correctly resolved
 	for y := 0; y < len(t); y++ {
 		for x := 0; x < len(t[y]); x++ {
 			cursor_end_line := len(t[y]) - 1
