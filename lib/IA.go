@@ -1,10 +1,9 @@
 package lib
 
-func Linesudoku(ligne []int, n int) bool {
+func LineSudoku(ligne []int, n int) bool {
 	//Check if the n parameter is already in the current line
 	//Return true if it's not in the line and false if it's in
-	lentab := len(ligne)
-	for i := 0; i < lentab; i++ {
+	for i := 0; i < len(ligne); i++ {
 		if n == ligne[i] {
 			return false
 		}
@@ -12,11 +11,10 @@ func Linesudoku(ligne []int, n int) bool {
 	return true
 }
 
-func Colonnesudoku(colonne [][]int, idColonne int, n int) bool {
+func ColonneSudoku(colonne [][]int, idColonne int, n int) bool {
 	//Check if the n parameter is already in the current column
 	//Return true if it's not in the line and false if it's in
-	lentab := len(colonne)
-	for i := 0; i < lentab; i++ {
+	for i := 0; i < len(colonne); i++ {
 		if colonne[i][idColonne] == n {
 			return false
 		}
@@ -24,7 +22,7 @@ func Colonnesudoku(colonne [][]int, idColonne int, n int) bool {
 	return true
 }
 
-func NotInSquare(tab [][]int, x int, y int, digit int) bool {
+func SquareSudoku(tab [][]int, x int, y int, digit int) bool {
 	// function who return true if digit in square n°square
 	// initialization of varriable
 	indexLign := 3 * (x / 3)
@@ -50,7 +48,7 @@ func BackTracking(grid [][]int, pos int) bool {
 		return BackTracking(grid, pos+1)
 	}
 	for i := 1; i <= 9; i++ {
-		if Linesudoku(grid[posX], i) && Colonnesudoku(grid, posY, i) && NotInSquare(grid, posX, posY, i) {
+		if LineSudoku(grid[posX], i) && ColonneSudoku(grid, posY, i) && SquareSudoku(grid, posX, posY, i) {
 			grid[posX][posY] = i
 			if BackTracking(grid, pos+1) {
 				return true
