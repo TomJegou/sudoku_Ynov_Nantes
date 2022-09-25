@@ -14,7 +14,7 @@ func main() {
 		if lib.CheckSudoku(a) {
 			lib.DisplayGrid(a)
 		} else {
-			fmt.Printf("Unable to solve the grid")
+			fmt.Println("Error, unable to solve the grid")
 		}
 	}
 }
